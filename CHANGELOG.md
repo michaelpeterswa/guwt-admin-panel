@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/michaelpeterswa/guwt-admin-panel/compare/v1.6.2...v1.7.0) (2021-03-04)
+
+
+### Features
+
+* added a modul to show the tour info, and added a form input in edit tour view to add a description ([9b93027](https://github.com/michaelpeterswa/guwt-admin-panel/commit/9b9302751bece5987c3270716ead408ecc465600))
+* added modal to show stop info ([8ce15ce](https://github.com/michaelpeterswa/guwt-admin-panel/commit/8ce15ce716816b163c215a48a3bc78c837dc3a25))
+* implemented enabling tours ([fa665a7](https://github.com/michaelpeterswa/guwt-admin-panel/commit/fa665a727a9d64cd6cf21cba21f28deaae8e0176))
+
+
+### Bug Fixes
+
+* corrected .env assignments and the incorrect environment vars (password and maps) ([fbfdac5](https://github.com/michaelpeterswa/guwt-admin-panel/commit/fbfdac5908aae502f7197279a13cfb7d437cf910))
+
 ### [1.6.2](https://github.com/michaelpeterswa/guwt-admin-panel/compare/v1.6.1...v1.6.2) (2021-03-04)
 
 
