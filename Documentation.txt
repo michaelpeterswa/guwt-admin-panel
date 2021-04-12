@@ -5,8 +5,26 @@ this is written in react.js, if you're not fammilier with the language, W3 schoo
 We chose to use functional components and hooks in our project instead of doing the state components with the lifecyle
 This was done to keep the components more modular and flexible
 
+ENVIROMENT VARIABLES
+there are several variables that are stored within the .env file
+all variables need to start with "REACT_APP"
+variables:
+    REACT_APP_CREATE_ORGANIZATION_PASSWORD - this sets the password that admins need to create an organization
+    REACT_APP_AUTH0_DOMAIN - domain for auth0
+    REACT_APP_AUTH0_CLIENT_ID - id for auth0
+    REACT_APP_API_KEY - our API key
+    REACT_APP_GOOGLE_API_KEY - our google api key
+
 COMMANDS TO USE
 running the program: cd into this directory and run npm start
+you might need to run <npm i> before that or npm install <package>
+
+SECURITY
+We decided to use auth0 to handle creating accounts and logging in
+
+STYLING
+Most of the styling was done with inline css
+We used bootstrap and this cut down the amount of styling that we had to do
 
 STRUCTURE OF THE PROGRAM
 The code is located in the /src directory and is split into two groups
@@ -33,9 +51,10 @@ App.js
 |   |   |   |   EditTourView            (view)
 |   |   |   |   |   StopCell            (component)
 |   |   |   |   |   EditStopView        (view)
+|   |   |   |   |   |   MediaView       (view)
 |   |   |   MemberView                  (view)
 |   |   |   |   ModeratorCell           (component)
 |   |   |   |   ProspectiveMemberCell   (component)
-|   |   |   MediaView                   (view)
+
 
           

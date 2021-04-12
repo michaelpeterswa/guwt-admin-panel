@@ -56,12 +56,12 @@ const SelectOrganization = () => {
     );
 
     function goToOrganization(){
-        console.log("test");
+        // console.log("test");
         setOrganizationChosen(true);
     }
 
     function loadOrganizations(){
-      console.log("getting organization data")
+      // console.log("getting organization data")
       try {
         axios.get('https://backend.gonzagatours.app/api/organizations', {
           'headers': {
@@ -78,7 +78,7 @@ const SelectOrganization = () => {
             setResponseData(data)
           })
       } catch (e) {
-        console.log("failed")
+        // console.log("failed")
       }
 
       // document.addEventListener("click", handleClick);

@@ -14,7 +14,7 @@ import { Form, Row, Col, Container } from "react-bootstrap";
 //import the css module
 // import styles from "../css_modules/generalStyles.module.css";
 
-const MediaView = ({tour_id, stop_id}) => {
+const MediaView = ({tour_id, stop_id, stops, stopIndex}) => {
     const randomTestText = "Images Available";
     const [isClicked, setisClicked] = useState(false);
     const [selectedFiles, setSelectedFiles] = useState([]);
@@ -126,7 +126,6 @@ const MediaView = ({tour_id, stop_id}) => {
     }
 
     function getMedia(){
-        
         axios.get('https://backend.gonzagatours.app/media/ms/', {
             'headers': {
             'Authentication': process.env.REACT_APP_API_KEY
@@ -143,6 +142,18 @@ const MediaView = ({tour_id, stop_id}) => {
                     data.push(response.data.data[group])
                 }
             }
+            stops[stopIndex].media = []
+            var m
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+                // console.log("test7", element)
+                var temp = {
+                    id: element.s3_id,
+                    s3_loc: element.s3_loc
+                }
+                stops[stopIndex].media.push(temp);
+                
+            }
             setSelectedFiles(data)
         })
     }
@@ -151,7 +162,6 @@ const MediaView = ({tour_id, stop_id}) => {
     function displayMedia(){
         setisClicked(!isClicked);
     }
-
 }
 
 export default MediaView;

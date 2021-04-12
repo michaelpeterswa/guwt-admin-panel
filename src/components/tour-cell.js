@@ -62,6 +62,7 @@ const TourCell = ({setTourEditMode, tourIndex, setTourIndex, tours,  setDeleteTo
     }
 
     function deleteTourButton(){
+        setTourIndex(tourIndex);
         setDeleteTour(true);
     }
 
