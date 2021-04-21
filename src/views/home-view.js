@@ -12,9 +12,6 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import TourCell from "../components/tour-cell";
 import Card from "react-bootstrap/Card";
-import TourInfo from "../components/tour-info";
-import NewOrganization from '../components/new-organization';
-
 import EditTour from "./edit-tour-view";
 
 const Home = ({organizationData}) => {
@@ -27,13 +24,40 @@ const Home = ({organizationData}) => {
   const [tourIndex, setTourIndex] = useState(0);  //the index of the tour that is currently selected
   const [deleteTour, setDeleteTour] = useState(false); //determines whether to delete a tour or not
   const [refresh, setRefresh] = useState(false); //call this when you want to rerender. kinda hacky but it works
-  const [showTourInfo, setShowTourInfo] = useState(false);
   const [toggleEnable, setToggleEnable] = useState(false);
+
+  //gets the tours from the database
+  function loadTours(){
+    // console.log("loading tours from the database...")
+    axios.get('https://backend.gonzagatours.app/tour/tours', {
+      'headers': {
+        'Authentication': process.env.REACT_APP_API_KEY
+      },
+      responseType: 'json',
+    })
+    .then(response => {
+      // console.log("finished getting tours from the database...")
+      var data = []
+      var group
+      for(group in response.data.data){
+        var orgName = response.data.data[group].organization;
+        if(orgName === organizationData.name){
+          data.push(response.data.data[group])
+        }
+      }
+      setTourData(data)
+      setRefresh(!refresh)
+    })
+  }
 
   useEffect(() => {
     loadTours();
-  }, [])
-  
+  })
+
+  const refreshPage = ()=>{
+    loadTours()
+    setRefresh({})
+  }
   //checks if we are in the tour edit mode
   if(tourEditMode){
     return (
@@ -43,7 +67,7 @@ const Home = ({organizationData}) => {
 
   if(toggleEnable){
     tourData[tourIndex].enabled = !tourData[tourIndex].enabled
-    console.log(tourData[tourIndex].enabled)
+    // console.log(tourData[tourIndex].enabled)
     updateTour();
     setToggleEnable(false)
   }
@@ -57,6 +81,8 @@ const Home = ({organizationData}) => {
       {/* <NewOrganization  setAddNewOrganization={null} loadOrganizations={null}/> */}
       
       {/* display the list of tour cells */}
+      <br></br>
+      <Button onClick={refreshPage}>Refresh Tour List</Button>
       <Card style={{ width: '100%', marginTop: '2%'}}>
         <Card.Body>
           {tourData.map((tour, i) => (
@@ -66,7 +92,7 @@ const Home = ({organizationData}) => {
       </Card>
       
       {/* display the adding tour button */}
-      <Button style={{ marginTop: '2%'}} onClick={() => addTourButton()}>create new tour</Button>
+      <Button style={{ marginTop: '2%'}} onClick={() => addTourButton()}>Create New Tour</Button>
     </div>
   );
 
@@ -84,9 +110,7 @@ const Home = ({organizationData}) => {
           }
       }
     )
-    setDeleteTour(false);
-    loadTours();
-    // setRefresh(!refresh);
+    setDeleteTour(false);    
   }
 
   //adds a tour to the list
@@ -108,14 +132,11 @@ const Home = ({organizationData}) => {
               'Authentication': process.env.REACT_APP_API_KEY
           }
       }
-    )
-
-    loadTours();
-    // setRefresh(!refresh);
+    )    
   }
 
   function updateTour(){
-    console.log("updating the tour")
+    // console.log("updating the tour")
     axios
     .put(
       'https://backend.gonzagatours.app/tour/t/' + tourData[tourIndex]._id, 
@@ -126,35 +147,11 @@ const Home = ({organizationData}) => {
           }
     })
     .then((response) => {
-        console.log("finished updating the tour")
+        // console.log("finished updating the tour")
         loadTours()
         setRefresh(!refresh)
     }
     )
-  }
-
-    //gets the tours from the database
-  function loadTours(){
-    console.log("loading tours from the database...")
-    axios.get('https://backend.gonzagatours.app/tour/tours', {
-      'headers': {
-        'Authentication': process.env.REACT_APP_API_KEY
-      },
-      responseType: 'json',
-    })
-    .then(response => {
-      console.log("finished getting tours from the database...")
-      var data = []
-      var group
-      for(group in response.data.data){
-        var orgName = response.data.data[group].organization;
-        if(orgName === organizationData.name){
-          data.push(response.data.data[group])
-        }
-      }
-      setTourData(data)
-      setRefresh(!refresh)
-    })
   }
 }
 

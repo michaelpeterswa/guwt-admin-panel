@@ -34,7 +34,7 @@ const MediaCell = ({mediaIndex, media, setDeleteMedia, setMediaIndex, setSelecte
     );
 
     function viewMedia(){
-        console.log("going in")
+        // console.log("going in")
         setSelectedIndex(mediaIndex)
     }
 

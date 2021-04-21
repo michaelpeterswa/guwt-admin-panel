@@ -18,10 +18,10 @@ import TourInfo from "./tour-info";
 //  setTours: sets the tours
 const TourCell = ({setTourEditMode, tourIndex, setTourIndex, tours,  setDeleteTour, setToggleEnable}) => {
 
-    const [enabled, setEnabled] = useState(false); //tours[tourIndex].enabled
+    // const [enabled, setEnabled] = useState(false); //tours[tourIndex].enabled
     const [showTourInfo, setShowTourInfo] = useState(false);
 
-    console.log(tours[tourIndex])
+    // console.log(tours[tourIndex])
     return (
         //display the tour name and #of stops, and delete, info, and edit buttons
         <>

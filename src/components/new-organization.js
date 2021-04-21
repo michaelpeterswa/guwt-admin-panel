@@ -101,10 +101,10 @@ const NewOrganization = ({setAddNewOrganization, loadOrganizations}) => {
     //creates a new organization from the form and uploads it to the server
     function addOrganization(){
         if(creatorPassword !== process.env.REACT_APP_CREATE_ORGANIZATION_PASSWORD){
-            console.log("failed")
+            // console.log("failed")
             return 
         }else{
-            console.log("passed");
+            // console.log("passed");
         }
         if(doesOrganizationExist()){
             return
@@ -169,7 +169,7 @@ const NewOrganization = ({setAddNewOrganization, loadOrganizations}) => {
 
     //gets the names of the different organizations
     function getOrganizationNames(){
-        console.log("getting organization names")
+        // console.log("getting organization names")
         axios.get('https://backend.gonzagatours.app/api/organizations', {
             'headers': {
               'Authentication': process.env.REACT_APP_API_KEY

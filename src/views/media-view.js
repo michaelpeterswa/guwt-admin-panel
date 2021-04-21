@@ -1,34 +1,34 @@
-//component for the media view
+//component for the media views
 //accessed through the OrganizationMainPage component
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import pic from '../images/college-hall.jpg'
+// import pic from '../images/college-hall.jpg'
 import Button from "react-bootstrap/Button";
-import ImageUploader from 'react-images-upload';
+// import ImageUploader from 'react-images-upload';
 import Card from "react-bootstrap/Card";
 
 import MediaCell from '../components/media-cell'
-import { Form, Row, Col, Container } from "react-bootstrap";
+import {Row, Col, Container } from "react-bootstrap";
 
 
 //import the css module
 // import styles from "../css_modules/generalStyles.module.css";
 
 const MediaView = ({tour_id, stop_id, stops, stopIndex}) => {
-    const randomTestText = "Images Available";
-    const [isClicked, setisClicked] = useState(false);
+    // const randomTestText = "Images Available";
+    // const [isClicked, setisClicked] = useState(false);
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [deleteMedia, setDeleteMedia] = useState(false);
     // const [open, setOpen] = React.useState(false);
     const [image, setImage] = useState({ preview: "", raw: "" })
-    const [refresh, setRefresh] = useState(false);
+    // const [refresh, setRefresh] = useState(false);
     const [mediaIndex, setMediaIndex] = useState(0);
-    const [test, setTest] = useState("0")
+    // const [test, setTest] = useState("0")
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     useEffect(() => {
         getMedia();
-      }, []);
+      });
 
     if(deleteMedia === true){
         deleteMediaFunc();
@@ -49,7 +49,7 @@ const MediaView = ({tour_id, stop_id, stops, stopIndex}) => {
 
     const handleUpload = async e => {        
         // e.preventDefault();
-        console.log("uploading");
+        // console.log("uploading");
 
         var data = new FormData();
         data.append('media', image.raw); //the FormData is not getting the appropriate image in time for the post to fire
@@ -69,22 +69,21 @@ const MediaView = ({tour_id, stop_id, stops, stopIndex}) => {
             )
             .then((response) => {
                 if (response.status === 201){
-                    console.log("passed")
+                    // console.log("passed")
                     getMedia()
                 }
                 else{
-                    console.log("failed")
+                    // console.log("failed")
                 }
             }
             )
             .catch((error) =>{
-                console.log(error.message)
+                // console.log(error.message)
             }) 
     };
 
     return (
         <Container>
-            {console.log(selectedIndex)}
             <Row>
                 <Col>
                     <input type="file" onChange={onFileChange}/>
@@ -138,12 +137,11 @@ const MediaView = ({tour_id, stop_id, stops, stopIndex}) => {
             for(group in response.data.data){
                 var tourID = response.data.data[group].tour_id;
                 var stopID = response.data.data[group].stop_id;
-                if(stopID == stop_id && tourID == tour_id){
+                if(stopID === stop_id && tourID === tour_id){
                     data.push(response.data.data[group])
                 }
             }
             stops[stopIndex].media = []
-            var m
             for (let index = 0; index < data.length; index++) {
                 const element = data[index];
                 // console.log("test7", element)
@@ -159,9 +157,9 @@ const MediaView = ({tour_id, stop_id, stops, stopIndex}) => {
     }
 
 
-    function displayMedia(){
-        setisClicked(!isClicked);
-    }
+    // function displayMedia(){
+    //     setisClicked(!isClicked);
+    // }
 }
 
 export default MediaView;

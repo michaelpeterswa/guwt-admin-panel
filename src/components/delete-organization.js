@@ -32,7 +32,7 @@ const DeleteOrganization = ({organizationData, setOrgChosen}) => {
     function deleteTheOrganization(){
         let url = "https://backend.gonzagatours.app/api/organization/"
         url = url + organizationData._id
-        console.log("getting tour data to delete")
+        // console.log("getting tour data to delete")
 
         //get all the tours for an organization so that we can delete them
         axios.get('https://backend.gonzagatours.app/tour/tours/', {
@@ -54,7 +54,7 @@ const DeleteOrganization = ({organizationData, setOrgChosen}) => {
         })
 
         //delete the organization
-        console.log("deleting organization")
+        // console.log("deleting organization")
         axios.delete(
             url,
             {
@@ -64,7 +64,7 @@ const DeleteOrganization = ({organizationData, setOrgChosen}) => {
             }).then(
                 setOrgChosen(false) //set the organization chosen to be false since we have deleted the chosen org
             ).catch(function (error) {
-                console.log(error);
+                // console.log(error);
             });
     }
 
@@ -83,7 +83,7 @@ const DeleteOrganization = ({organizationData, setOrgChosen}) => {
     }
 
     function deleteTour(tour){
-        console.log("deleting tour")
+        // console.log("deleting tour")
         try{
             axios.delete(
                 "https://backend.gonzagatours.app/tour/t/" + tour._id,
@@ -94,12 +94,12 @@ const DeleteOrganization = ({organizationData, setOrgChosen}) => {
             }
             )
         }catch{
-            console.log("failed deleting tour")
+            // console.log("failed deleting tour")
         }
     }
 
     function deleteMedia(tour){
-        console.log("deleting media")
+        // console.log("deleting media")
         //get all the media for a tour so that we can delete them
         var data = []
         axios.get('https://backend.gonzagatours.app/media/ms/', {
@@ -118,7 +118,7 @@ const DeleteOrganization = ({organizationData, setOrgChosen}) => {
             }
         })
 
-        console.log(data.length)
+        // console.log(data.length)
 
         data.map((media, i) => (
             axios.delete(

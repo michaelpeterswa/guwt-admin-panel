@@ -10,9 +10,6 @@ import { Col, Row, Container, Card } from "react-bootstrap";
 import MediaView from "./media-view";
 //import the css module
 import Map from "../components/map";
-import { Component } from "react";
-
-
 
 const EditStop = ({setEditStopMode, stops, stopIndex, setTriggerUpdateTour, tour_id}) => {
 

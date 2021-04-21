@@ -13,7 +13,7 @@ import ModeratorCell from "../components/moderator-cell"
 
 const MemberView = ({organizationData}) => {
 
-    const [refresh, setRefresh] = useState(false); //call this when you want to rerender. kinda hacky but it works
+    const [setRefresh] = useState(false); //call this when you want to rerender. kinda hacky but it works
 
     return (
         <>

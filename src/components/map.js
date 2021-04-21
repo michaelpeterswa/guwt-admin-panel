@@ -47,7 +47,6 @@ const Map = ({stopLatLng, setStopLatLng}) => {
           // onZoom={(map) => dragEnd(map)}
           // onChange={({map}) => dragEnd(map)}
         >
-          {console.log(center.lng)}
           <LocationPin
           lat={center.lat}
           lng={center.lng}
