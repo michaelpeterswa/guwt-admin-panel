@@ -33,6 +33,11 @@ const Home = ({organizationData}) => {
   useEffect(() => {
     loadTours();
   }, [])
+
+  const refreshPage = ()=>{
+    loadTours()
+    setRefresh({})
+  }
   
   //checks if we are in the tour edit mode
   if(tourEditMode){
@@ -57,6 +62,8 @@ const Home = ({organizationData}) => {
       {/* <NewOrganization  setAddNewOrganization={null} loadOrganizations={null}/> */}
       
       {/* display the list of tour cells */}
+      <br></br>
+      <Button onClick={refreshPage}>Refresh Tour List</Button>
       <Card style={{ width: '100%', marginTop: '2%'}}>
         <Card.Body>
           {tourData.map((tour, i) => (
@@ -66,7 +73,7 @@ const Home = ({organizationData}) => {
       </Card>
       
       {/* display the adding tour button */}
-      <Button style={{ marginTop: '2%'}} onClick={() => addTourButton()}>create new tour</Button>
+      <Button style={{ marginTop: '2%'}} onClick={() => addTourButton()}>Create New Tour</Button>
     </div>
   );
 
