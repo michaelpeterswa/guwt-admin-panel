@@ -2,6 +2,56 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/michaelpeterswa/guwt-admin-panel/compare/v1.8.0...v1.10.0) (2021-04-21)
+
+
+### Features
+
+* added field for media credits ([024d73e](https://github.com/michaelpeterswa/guwt-admin-panel/commit/024d73e26de3cb3d4a3e9189e33622ff97e94db3))
+* added field for media credits ([1ee4e84](https://github.com/michaelpeterswa/guwt-admin-panel/commit/1ee4e843a08ae20fe270a59bd3f4a7a53621e214))
+* added tourlist refresh button ([95efce9](https://github.com/michaelpeterswa/guwt-admin-panel/commit/95efce9b7453c58e83638f88fccd4b340bcea602))
+* created deployReact.sh ([cbca043](https://github.com/michaelpeterswa/guwt-admin-panel/commit/cbca0438419d03cf8b843cdd79d3315d6792be6d))
+* merged ([fd8a311](https://github.com/michaelpeterswa/guwt-admin-panel/commit/fd8a311ec79687c77d895f995c0d823474dd8ce0))
+* removed some log statements ([244b88f](https://github.com/michaelpeterswa/guwt-admin-panel/commit/244b88fb8effc1379a347373747bbc1860e3386a))
+
+
+### Bug Fixes
+
+* added .dockerignore ([95c5975](https://github.com/michaelpeterswa/guwt-admin-panel/commit/95c59750e9cce03d402b20493ca5b12f25f57363))
+* added package-lock.json to .dockerignore ([cb60f0e](https://github.com/michaelpeterswa/guwt-admin-panel/commit/cb60f0e7fb669e9db4f94ecfa1029a43906c379d))
+* again had to change one line in Dockerfile ([f448d18](https://github.com/michaelpeterswa/guwt-admin-panel/commit/f448d18cb09e092d2d657d92e9841db7c1d443df))
+* delete tours button deletes correct tour ([e55cc82](https://github.com/michaelpeterswa/guwt-admin-panel/commit/e55cc82f85ca4cbcb9878c4e7eba3caaa384bdd1))
+* media now gets added to the media array in the stop ([3729ab3](https://github.com/michaelpeterswa/guwt-admin-panel/commit/3729ab3ef133613e428fda6cbb5d240019b3cf38))
+* patched dockerignore to allow for .env to be packed ([1302063](https://github.com/michaelpeterswa/guwt-admin-panel/commit/1302063e5d556c2aa0476743911b2cc317884d51))
+* **CI:** moving some things around ([1f686bc](https://github.com/michaelpeterswa/guwt-admin-panel/commit/1f686bcd03583486465e4a3b5fcd02d81d70d541))
+* revert ([bfd84a7](https://github.com/michaelpeterswa/guwt-admin-panel/commit/bfd84a7a44f1d0bb91ad595df19fcb12a7c61718))
+* testing a change ([9a71218](https://github.com/michaelpeterswa/guwt-admin-panel/commit/9a71218f9777c85660d7e07fd4447f1d05b65aba))
+
+## [1.9.0](https://github.com/michaelpeterswa/guwt-admin-panel/compare/v1.8.0...v1.9.0) (2021-04-21)
+
+
+### Features
+
+* added field for media credits ([024d73e](https://github.com/michaelpeterswa/guwt-admin-panel/commit/024d73e26de3cb3d4a3e9189e33622ff97e94db3))
+* added field for media credits ([1ee4e84](https://github.com/michaelpeterswa/guwt-admin-panel/commit/1ee4e843a08ae20fe270a59bd3f4a7a53621e214))
+* added tourlist refresh button ([95efce9](https://github.com/michaelpeterswa/guwt-admin-panel/commit/95efce9b7453c58e83638f88fccd4b340bcea602))
+* created deployReact.sh ([cbca043](https://github.com/michaelpeterswa/guwt-admin-panel/commit/cbca0438419d03cf8b843cdd79d3315d6792be6d))
+* merged ([fd8a311](https://github.com/michaelpeterswa/guwt-admin-panel/commit/fd8a311ec79687c77d895f995c0d823474dd8ce0))
+* removed some log statements ([244b88f](https://github.com/michaelpeterswa/guwt-admin-panel/commit/244b88fb8effc1379a347373747bbc1860e3386a))
+
+
+### Bug Fixes
+
+* added .dockerignore ([95c5975](https://github.com/michaelpeterswa/guwt-admin-panel/commit/95c59750e9cce03d402b20493ca5b12f25f57363))
+* added package-lock.json to .dockerignore ([cb60f0e](https://github.com/michaelpeterswa/guwt-admin-panel/commit/cb60f0e7fb669e9db4f94ecfa1029a43906c379d))
+* again had to change one line in Dockerfile ([f448d18](https://github.com/michaelpeterswa/guwt-admin-panel/commit/f448d18cb09e092d2d657d92e9841db7c1d443df))
+* delete tours button deletes correct tour ([e55cc82](https://github.com/michaelpeterswa/guwt-admin-panel/commit/e55cc82f85ca4cbcb9878c4e7eba3caaa384bdd1))
+* media now gets added to the media array in the stop ([3729ab3](https://github.com/michaelpeterswa/guwt-admin-panel/commit/3729ab3ef133613e428fda6cbb5d240019b3cf38))
+* patched dockerignore to allow for .env to be packed ([1302063](https://github.com/michaelpeterswa/guwt-admin-panel/commit/1302063e5d556c2aa0476743911b2cc317884d51))
+* **CI:** moving some things around ([1f686bc](https://github.com/michaelpeterswa/guwt-admin-panel/commit/1f686bcd03583486465e4a3b5fcd02d81d70d541))
+* revert ([bfd84a7](https://github.com/michaelpeterswa/guwt-admin-panel/commit/bfd84a7a44f1d0bb91ad595df19fcb12a7c61718))
+* testing a change ([9a71218](https://github.com/michaelpeterswa/guwt-admin-panel/commit/9a71218f9777c85660d7e07fd4447f1d05b65aba))
+
 ## [1.8.0](https://github.com/michaelpeterswa/guwt-admin-panel/compare/v1.6.2...v1.8.0) (2021-03-04)
 
 

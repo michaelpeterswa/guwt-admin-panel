@@ -1,6 +1,6 @@
 {
   "name": "guwt-admin-panel",
-  "version": "1.8.0",
+  "version": "1.10.0",
   "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^1.1.0",
